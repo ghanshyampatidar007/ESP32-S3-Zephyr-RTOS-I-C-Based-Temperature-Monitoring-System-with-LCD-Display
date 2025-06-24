@@ -1,0 +1,19 @@
+&i2c0 {
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-names = "default";
+    clock-frequency = <I2C_BITRATE_STANDARD>;
+    
+    lcd2004a@27 {
+        compatible = "lcd2004a";
+        reg = <0x27>;  // Common PCF8574 I2C address
+        label = "LCD_2004A";
+    };
+
+    bme680@76 {
+        status = "okay";
+        compatible = "bosch,bme680";
+        reg = <0x76>;
+        label = "BME680";
+    };
+};
